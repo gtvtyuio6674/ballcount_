@@ -1,1 +1,0 @@
-ALTER TABLE `ledger` ADD `applied` integer DEFAULT 0 NOT NULL;
