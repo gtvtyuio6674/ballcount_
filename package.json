@@ -1,18 +1,19 @@
 {
   "name": "ballcount",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "private": true,
   "engines": {
     "node": ">=22.13.0"
   },
   "scripts": {
-    "dev": "vinext dev",
-    "build": "vinext build",
+    "dev": "node restore-source.mjs dev",
+    "build": "node restore-source.mjs build",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
-    "deploy": "node scripts/deploy.mjs",
+    "deploy": "node restore-source.mjs deploy",
     "db:generate": "drizzle-kit generate",
-    "db:local": "wrangler d1 migrations apply DB --local --config wrangler.json"
+    "db:local": "wrangler d1 migrations apply DB --local --config wrangler.json",
+    "source:restore": "node restore-source.mjs restore"
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",
